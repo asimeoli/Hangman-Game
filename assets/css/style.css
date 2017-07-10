@@ -1,0 +1,18 @@
+* {	
+	font-family: 'Permanent Marker', cursive;
+	font-size: 30px;
+}
+
+#heading {
+	font-family: 'Permanent Marker', cursive;
+}
+
+#press {
+	margin-top: 30px;
+}
+
+#answer {
+	font-family: monospace;
+}
+
+/*Used monospace font to prevent font movement*/
