@@ -1,3 +1,4 @@
+// Global Variables 
 var words = ["PELOTON" , "SUNFLOWERS" , "LEADERS" , "KING OF THE MOUNTAINS" , "TIME TRIALS"]
 var pictures = ["assets/images/peloton.jpg", "assets/images/sunflowers.jpg","assets/images/leaders.jpg","assets/images/king.jpg","assets/images/time.jpg"]
 var word = "";
@@ -10,19 +11,19 @@ var badLetters = "";
 var wins = 0;
 var wordIndex = 0;
 var defaultPicture = "http://www.dafont.com/forum/attach/orig/2/8/284763.gif";
-var gameComplete = false;
+
 
 function loadWord(){
-
 	if (wordIndex < words.length) {
-	word = words[wordIndex].toUpperCase();
-	document.getElementById("picture").src=defaultPicture
-	guessesRemaining = 10;
-	badLetters = "";
-	guesses = "";
-	tempDisplayWord = "";
+		word = words[wordIndex].toUpperCase();
+		document.getElementById("picture").src=defaultPicture
+		guessesRemaining = 10;
+		badLetters = "";
+		guesses = "";
+		tempDisplayWord = "";
 	for (var i=0; i < word.length; i++){
-			var letter = word.charAt(i);
+		var letter = word.charAt(i);
+		
 		if (letter === " ") {
 			tempDisplayWord = tempDisplayWord + " ";
 		}else {
@@ -51,14 +52,14 @@ document.onkeyup = function() {
 		  badLetters = badLetters + userguess + " ";
 	  }
 	}
-	tempDisplayWord = "";
-		for (var i=0; i < word.length; i++){
-			var letter = word.charAt(i);
+		tempDisplayWord = "";
+	for (var i=0; i < word.length; i++){
+		var letter = word.charAt(i);
 			
-			if (guesses.search(letter) == -1) {
-				tempDisplayWord = tempDisplayWord + "_";
-			} else {
-				tempDisplayWord = tempDisplayWord + letter;
+		if (guesses.search(letter) == -1) {
+			tempDisplayWord = tempDisplayWord + "_";
+		} else {
+			tempDisplayWord = tempDisplayWord + letter;
 			}
 		}	
 	}
