@@ -1,18 +1,45 @@
 * {	
+	font-family: 'Permanent Marker', cursive;	
+}
+
+.header {
 	font-family: 'Permanent Marker', cursive;
-	font-size: 30px;
+	background-color: #fadd00;
+	width: 100%;
+	height: 
 }
 
 #heading {
+	font-size: 50px;
 	font-family: 'Permanent Marker', cursive;
+}
+
+#subheading {
+	font-size: 30px;
+	font-family: 'Permanent Marker', cursive;
+}
+
+.thumbnail {
+ 
 }
 
 #press {
 	margin-top: 30px;
 }
 
+.words {
+	font-size: 25px;
+}
+
 #answer {
 	font-family: monospace;
 }
+/*Used monospace font to prevent space movement*/
 
-/*Used monospace font to prevent font movement*/
+.footer {
+	background-color: #666666;
+}
+
+.spacer {
+	height: 100px;
+}

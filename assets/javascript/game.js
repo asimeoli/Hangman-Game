@@ -1,5 +1,5 @@
-var words = ["T" , "T" , "T" , "t" , "t"]
-var pictures = ["https://goo.gl/R4DBxE", "https://goo.gl/dk8Qnd","","",""]
+var words = ["PELOTON" , "SUNFLOWERS" , "LEADERS" , "KING OF THE MOUNTAINS" , "TIME TRIALS"]
+var pictures = ["assets/images/peloton.jpg", "assets/images/sunflowers.jpg","assets/images/leaders.jpg","assets/images/king.jpg","assets/images/time.jpg"]
 var word = "";
 var displayWord = "";
 var tempDisplayWord = "";
@@ -28,16 +28,15 @@ function loadWord(){
 		}else {
 			tempDisplayWord = tempDisplayWord + "_";
 		}
+	}firstKey = false;
+	}else {
+		tempDisplayWord = "Game Over! Refresh to Play Again"
 	}
-	}
-firstKey = false;
 }
 // On every keypress noting letter
 document.onkeyup = function() {
 	if (firstKey){
 		loadWord();
-		
-		
 	} else { 
 	
 	var userguess = (String.fromCharCode(event.keyCode)).toUpperCase();
@@ -49,7 +48,7 @@ document.onkeyup = function() {
 		
 		if (word.search(userguess) == -1) {
 		  guessesRemaining--;
-		  badLetters += (userguess + " ");
+		  badLetters = badLetters + userguess + " ";
 	  }
 	}
 	tempDisplayWord = "";
@@ -61,21 +60,22 @@ document.onkeyup = function() {
 			} else {
 				tempDisplayWord = tempDisplayWord + letter;
 			}
-	}	
-}
-} 
+		}	
+	}
+ 
 if (tempDisplayWord.search("_") == -1) {
-
 	wins ++;
 	document.getElementById("picture").src=pictures[wordIndex];
 	//win screen
+	tempDisplayWord = "You Win! Press any Key to Play Again"
 	firstKey = true;
 	wordIndex++;
 }else if (guessesRemaining == 0){
+	tempDisplayWord = "You Lose! Press any Key for Next Round"
 	firstKey = true;
 	wordIndex++;
 }
-
+}
 document.getElementById("answer").innerHTML = tempDisplayWord;
 	document.getElementById("counter").innerHTML = guessesRemaining;
 	document.getElementById("guesses").innerHTML = badLetters;
